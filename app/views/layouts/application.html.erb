@@ -11,10 +11,24 @@
   <body>
     <% if current_user %>
       <%= current_user.email %> | <%= link_to "Sign out", '/signout' %> | <%= link_to "Home", root_path %>
+
+      <% ord_count = 0  %>
+      <% current_order.order_items.each do |ord| %>
+
+      <% ord_count = ord_count + ord.quantity %>
+
+      <% end %>
+
+      | Total Items: <%= ord_count %>
+
+      | Your Current Total: <%= number_to_currency current_order.total_price %>
+
     <% else %>
       <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %> |
       <%= link_to "Home", root_path %>
     <% end %>
+
+
 
     <%= flash[:alert] %>
     <%= flash[:notice] %>
