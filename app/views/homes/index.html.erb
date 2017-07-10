@@ -5,10 +5,10 @@
   <p>
     <%= link_to "Add a Product", new_product_path %>
     <br>
-    <%= link_to "View Products", list_path %>
+    <%= link_to "View Products", products_path %>
     <br>
     <% if current_user %>
-      <%= link_to "Product Index", products_path %>
+      <%= link_to "Cart", cart_path %>
     <% end %>
   </p>
 </div>

@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show]
 
-  resources :products do
-    resources :order_items
-  end
+  resources :products
+  resources :order_items
 
   get '/list' => 'products#list'
 
@@ -15,5 +14,4 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
-
 end
