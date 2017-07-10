@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ecommerce</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <%= current_user.email %> | <%= link_to "Sign out", '/signout' %> | <%= link_to "Home", root_path %>
+    <% else %>
+      <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %> |
+      <%= link_to "Home", root_path %>
+    <% end %>
+
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="well col-md-10">
+          <%= yield %>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

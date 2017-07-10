@@ -1,0 +1,9 @@
+<h2>Stuff</h2>
+
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |prod| %>
+      <li><%= prod.name %></li>
+    <% end %>
+  </ul>
+<% end %>
