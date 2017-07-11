@@ -1,0 +1,14 @@
+<h2>Api Here</h2>
+
+<%= form_for :testy do |f| %>
+  <%= f.number_field :zip, in: 1...100000 %>
+  <%= f.submit %>
+<% end %>
+
+
+<div class="well">
+  <h3>Info Here</h3>
+
+    <%= @humidity %>
+  
+</div>

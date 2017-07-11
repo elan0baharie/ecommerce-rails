@@ -13,6 +13,11 @@
     Item Total: <%= ord_count %>
   </p>
   <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+  <%= form_for @order do |f| %>
+    <%= f.number_field :total_price, :value => current_order.total_price %>
+    <%= f.hidden_field :status, :value => "Shipped" %>
+    <%= f.submit "Ship Order", class: 'btn btn-success' %>
+  <% end %>
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>

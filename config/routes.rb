@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   resources :products
   resources :order_items
+  resources :orders
+  resources :charges
+
+  get '/test' => 'homes#test'
+  post '/test' => 'homes#test'
 
   get '/list' => 'products#list'
 

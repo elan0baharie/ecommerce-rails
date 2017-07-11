@@ -1,0 +1,9 @@
+<h2>Orders Lists</h2>
+
+<% if @orders.any? %>
+  <ul>
+    <% @orders.each do |ord| %>
+      <li><%= ord.id %> - <%= ord.status %> - <%= ord.total_price %></li>
+    <% end %>
+  </ul>
+<% end %>

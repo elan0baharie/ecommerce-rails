@@ -6,8 +6,12 @@
     <%= link_to "View Products", products_path %>
     <br>
     <% if current_user %>
-      <%= link_to "Cart", cart_path %>
+      <%= link_to "Cart", cart_path %> |
+      <%= link_to "Test", test_path %>
     <% end %>
+    <br>
+    <%= link_to "View Orders", orders_path %>
+    <%= link_to "New Charges", new_charge_path%>
   </p>
 </div>
 

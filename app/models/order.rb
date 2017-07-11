@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   before_save :update_total
   before_create :update_status
   has_many :products, through: :order_items
+  has_many :accounts
 
   def calculate_total
     self.order_items.collect { |item| item.product.price * item.quantity }.sum
@@ -18,5 +19,11 @@ class Order < ApplicationRecord
 
   def update_total
     self.total_price = calculate_total
+  end
+
+  def update_shipped
+    if self.status == "In progress"
+      self.status = "Shipped"
+    end
   end
 end
