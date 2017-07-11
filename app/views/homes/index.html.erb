@@ -3,15 +3,14 @@
 </div>
 <div class="left-welcome col-md-6">
   <p>
-    <%= link_to "View Products", products_path %>
+    <%= link_to "Add Products to Cart", products_path %>
     <br>
     <% if current_user %>
       <%= link_to "Cart", cart_path %> |
       <%= link_to "Test", test_path %>
     <% end %>
     <br>
-    <%= link_to "View Orders", orders_path %>
-    <%= link_to "New Charges", new_charge_path%>
+    <%= link_to "View Orders", orders_path %> 
   </p>
 </div>
 
