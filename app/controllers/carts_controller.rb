@@ -5,5 +5,5 @@ class CartsController < ApplicationController
     @order = current_order
   end
 
-  
+
 end

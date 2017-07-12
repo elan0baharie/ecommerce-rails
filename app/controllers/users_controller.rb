@@ -12,7 +12,13 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You've successfully signed up!"
       session[:user_id] = @user.id
-      redirect_to "/"
+      @account = Account.new
+      @account.user_id = @user.id
+      if @account.save
+        session[:account_id] = @user.id
+        flash[:notice] = "Account Created"
+        redirect_to "/"
+      end
     else
       flash[:alert] = "There was a problem signing up."
       redirect_to '/signup'

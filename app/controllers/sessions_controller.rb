@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
     if @user
       flash[:notice] = "You've signed in."
       session[:user_id] = @user.id
+      session[:account_id] = @user.id
+      puts "it works"
+      puts session[:account_id]
       redirect_to "/"
     else
       flash[:alert] = "There was a problem signing in. Please try again."

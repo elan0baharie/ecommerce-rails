@@ -1,12 +1,11 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.all
+    @user = current_user
   end
 
   def create
-    testy = params
-    p testy
-    redirect_to root
+
   end
 
   def update

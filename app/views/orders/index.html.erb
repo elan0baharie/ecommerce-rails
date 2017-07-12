@@ -1,15 +1,11 @@
-<h2>Orders Lists</h2>
+<h2><%= current_user.email %>'s Order History</h2>
 
 <% if @orders.any? %>
   <ul>
     <% @orders.each do |ord| %>
-      <li><%= ord.id %> - <%= ord.status %> - <%= ord.total_price %></li>
+      <% if ord.account_id == current_user.id %>
+        <li><%= ord.id %> - <%= ord.status %> - <%= ord.total_price %> -- <%= ord.account_id %></li>
+      <% end %>
     <% end %>
   </ul>
-<% end %>
-
-<% if current_user %>
-  <p>
-    Exists
-  </p>
 <% end %>
