@@ -25,6 +25,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if params['admin'] == "true"
+      @user.admin = true
+      if @user.save
+        redirect_to '/'
+      else
+        redirect_to 'cart'
+      end
+    end
+
+  end
+
   private
 
   def user_params

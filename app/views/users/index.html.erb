@@ -1,0 +1,9 @@
+<h2>All users</h2>
+<% if @users.any? %>
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= user.email %> -- <%= user.admin %> -- <%= button_to 'Admin', [user, :admin => 'true'], :method => "patch" %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

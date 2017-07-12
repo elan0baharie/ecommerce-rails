@@ -1,3 +1,22 @@
+<% if current_user %>
+  <% if current_user.admin == true %>
+    <div class="well">
+      <h4>Add A New Product</h4>
+      <%= form_for @product do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :price %>
+        <%= f.number_field :price, :step => 0.01, :min => 0 %>
+        <%= f.label :sale %>
+        <%= f.check_box :sale %>
+        <%= f.label :sale_amount %>
+        <%= f.number_field :sale_amount, :min => 0 %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
 <% @products.each do |product| %>
   <p><%= product.name %> | <%= number_to_currency product.price %>
   <%= form_for @order_item do |f| %>

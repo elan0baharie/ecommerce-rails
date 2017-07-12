@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :order_items
   resources :orders
   resources :charges
+  resources :users
 
   get '/test' => 'homes#test'
   post '/test' => 'homes#test'
