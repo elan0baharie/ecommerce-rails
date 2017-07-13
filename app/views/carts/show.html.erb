@@ -1,5 +1,13 @@
 <% if @order_items.any? %>
+  <% if current_user.account %>
+    <p>
+      Here
+    </p>
+  <% end %>
   <% @order_items.each do |item| %>
+    <p>
+      <%= item.order.id %>
+    </p>
     <p><%= item.product.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
     <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
   <% end %>
