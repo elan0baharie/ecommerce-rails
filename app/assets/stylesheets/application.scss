@@ -1,5 +1,16 @@
 @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url(https://fonts.googleapis.com/css?family=Zilla+Slab|Bellefair|Satisfy);
+
+ $zilla-slab: 'Zilla Slab', serif;
+ $bellefair: 'Bellefair', serif;
+ $satisfy: 'Satisfy', serif;
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("farmbg.jpg");
+}
 
 .left-welcome {
   border: 1px solid black;
@@ -7,4 +18,38 @@
 
 .right-welcome {
   border: 1px solid black;
+}
+
+.banner {
+  min-height: 180px;
+  background-image: url("Cornucopia.jpg");
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 8px 5px 10px #888888;
+  h2 {
+    margin-top: 60px;
+    color: white;
+    font-family: $bellefair;
+    font-size: 60px;
+    text-shadow:
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  }
+}
+
+.welcome-text {
+  margin: 5px;
+  margin-top: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.accent {
+  font-size: 35px;
+  margin-right: 2px;
+  padding-left: 15px;
+  font-family: $satisfy;
 }

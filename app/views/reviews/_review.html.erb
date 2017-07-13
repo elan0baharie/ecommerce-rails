@@ -1,0 +1,8 @@
+<li>
+  <%= review.content %> | by <%= review.author %> | rating: <%= review.rating %>
+
+  <%= link_to "Delete", product_review_path(@product, review),
+                           :data => {:confirm => "Are you sure?",
+                           :method => "delete"},
+                           :class => "btn btn-danger", remote: true %>
+</li>

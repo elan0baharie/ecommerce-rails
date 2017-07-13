@@ -1,0 +1,19 @@
+<%= @product.name %>
+
+<br>
+
+<%= link_to "Add a review", new_product_review_path(@product), id: "new_review_link", remote: true %>
+<ul>
+  <% if @product.reviews.any? %>
+    <% @product.reviews.each do |review| %>
+      <li id="product_reviews_<%= review.id %>"><%= review.content %> | by <%= review.author %> | rating: <%= review.rating %>
+
+      <%= link_to "Delete", product_review_path(@product, review),
+                               :data => {:confirm => "Are you sure?",
+                               :method => "delete"},
+                               :class => "btn btn-danger", remote: true %></li>
+    <% end %>
+  <% else %>
+    <h4>No reviews yet.</h4>
+  <% end %>
+</ul>
